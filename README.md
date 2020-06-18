@@ -1,5 +1,3 @@
-# curso_postgis_2_sql
-Curso de PostGIS, aprenderás a trabajar con el lenguaje SQL
 
 # Curso de introducción a PostgreSQL y PostGIS
 
