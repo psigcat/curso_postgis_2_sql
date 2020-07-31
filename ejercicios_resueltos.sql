@@ -45,6 +45,15 @@ select nomcomar, count(nomcomar)
     group by nomcomar
 ;
 
+-- listado de nombres de comarcas y espacios del PEIN
+select 'comarca' as origen , nomcomar as nom
+from limit_admin.comarques
+union 
+select 'pein' as origen, nom as nom
+from medi_ambient.espais_pein
+order by origen, nom
+;
+				       
 -- listado de municipios que tocan el Massís del Montseny
 select m.codimuni, m.nommuni, m.habitants, m.geom
   from limit_admin.munis_poly as m
