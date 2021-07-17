@@ -142,5 +142,11 @@ alter table limit_admin.munis_poly add column coordenada_y integer;
 update limit_admin.munis_poly set coordenada_x = st_x(ST_PointOnSurface(geom)) where st_isvalid(geom) is true;
 update limit_admin.munis_poly set coordenada_y = st_y(ST_PointOnSurface(geom)) where st_isvalid(geom) is true;
 
-
-												 
+-- create función que calcula el centroide
+create or replace function limit_admin.calcula_centroide() returns trigger as $$
+begin
+	new.coordenada_x := st_x(ST_PointOnSurface(new.geom));
+	new.coordenada_y := st_y(ST_PointOnSurface(new.geom));
+	return new;
+end;
+$$ language plpgsql;												 
