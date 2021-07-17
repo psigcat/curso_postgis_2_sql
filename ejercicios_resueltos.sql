@@ -150,3 +150,14 @@ begin
 	return new;
 end;
 $$ language plpgsql;												 
+
+
+-- create trigger para calcular el centroide al insertar o actualizar una geometría
+create trigger centroide_trigger
+	before insert or update of geom
+	on limit_admin.munis_poly  
+	for each row
+	execute procedure limit_admin.calcula_centroide();
+
+
+
