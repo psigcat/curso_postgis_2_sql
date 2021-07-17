@@ -133,7 +133,9 @@ create trigger area_trigger
 												 
 												 
 												 
-												 
+-- Añado 2 nuevas columnas
+alter table limit_admin.munis_poly add column coordenada_x integer;
+alter table limit_admin.munis_poly add column coordenada_y integer;											 
 												 
 												 
 												 
