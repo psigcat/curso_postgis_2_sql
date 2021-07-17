@@ -138,5 +138,9 @@ alter table limit_admin.munis_poly add column coordenada_x integer;
 alter table limit_admin.munis_poly add column coordenada_y integer;											 
 												 
 												 
-												 
+-- Actualizo el campo nuevo 
+update limit_admin.munis_poly set coordenada_x = st_x(ST_PointOnSurface(geom)) where st_isvalid(geom) is true;
+update limit_admin.munis_poly set coordenada_y = st_y(ST_PointOnSurface(geom)) where st_isvalid(geom) is true;
+
+
 												 
