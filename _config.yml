@@ -1,0 +1,6 @@
+url: psigcat.github.io
+baseurl: /curso_postgis_2_sql
+theme: jekyll-theme-midnight
+markdown: GFM
+title: PSIG
+description: Curso de PostGIS
